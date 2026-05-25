@@ -1,0 +1,107 @@
+@use 'sass:map';
+
+@use 'variables' as *;
+
+// TEXT PRESETS
+$text-presets: (
+  1: (
+    family: 'Nunito',
+    weight: 800,
+    size: 72px,
+    line-height: 110%,
+    letter-spacing: -2px,
+    tablet-size: 64px,
+    mobile-size: 52px,
+  ),
+  2: (
+    family: 'Nunito',
+    weight: 800,
+    size: 48px,
+    line-height: 120%,
+    letter-spacing: -2px,
+    tablet-size: 48px,
+    mobile-size: 40px,
+  ),
+  3: (
+    family: 'Nunito',
+    weight: 700,
+    size: 32px,
+    line-height: 130%,
+    letter-spacing: -1px,
+  ),
+  4: (
+    family: 'Nunito',
+    weight: 700,
+    size: 24px,
+    line-height: 130%,
+    letter-spacing: -1px,
+  ),
+  5: (
+    family: 'Nunito',
+    weight: 700,
+    size: 20px,
+    line-height: 140%,
+    letter-spacing: -0.5px,
+  ),
+  6: (
+    family: 'Nunito Sans',
+    weight: 500,
+    size: 20px,
+    line-height: 150%,
+    letter-spacing: -0.4px,
+  ),
+  7: (
+    family: 'Nunito',
+    weight: 600,
+    size: 18px,
+    line-height: 150%,
+    letter-spacing: -0.3px,
+  ),
+  8: (
+    family: 'Nunito Sans',
+    weight: 700,
+    size: 16px,
+    line-height: 150%,
+    letter-spacing: -0.3px,
+  ),
+  9: (
+    family: 'Nunito Sans',
+    weight: 500,
+    size: 16px,
+    line-height: 150%,
+    letter-spacing: -0.3px,
+  ),
+  10: (
+    family: 'Nunito Sans',
+    weight: 700,
+    size: 14px,
+    line-height: 150%,
+    letter-spacing: -0.3px,
+  ),
+);
+
+@mixin text-preset($num) {
+  $preset: map.get($text-presets, $num);
+
+  font-family: map.get($preset, family);
+  font-weight: map.get($preset, weight);
+  font-size: if(
+    map.has-key($preset, mobile-size),
+    map.get($preset, mobile-size),
+    map.get($preset, size)
+  ); // mobile first
+  line-height: map.get($preset, line-height);
+  letter-spacing: map.get($preset, letter-spacing);
+
+  @if map.has-key($preset, tablet-size) {
+    @media (min-width: $breakpoint-tablet) {
+      font-size: map.get($preset, tablet-size);
+    }
+  }
+
+  @if map.has-key($preset, desktop-size) {
+    @media (min-width: $breakpoint-desktop) {
+      font-size: map.get($preset, desktop-size);
+    }
+  }
+}
