@@ -1,5 +1,12 @@
+import Navigation from './components/Navigation';
+
 function App() {
-  return <>Personal finance app</>;
+  return (
+    <>
+      <Navigation />
+      <main>Personal finance app</main>
+    </>
+  );
 }
 
 export default App;
