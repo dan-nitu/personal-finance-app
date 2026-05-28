@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../typography' as *;
 
 nav {
   position: fixed;
@@ -14,10 +15,26 @@ nav {
   padding-inline: 16px;
   padding-top: 8px;
 
+  @media (min-width: $breakpoint-tablet) {
+    padding-inline: 40px;
+    gap: 40px;
+  }
+
   a {
     padding: 8px 22px;
     border-bottom: 4px solid transparent;
     color: $grey-300;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding-inline: 10px;
+      flex-basis: 0;
+      flex-grow: 1;
+    }
 
     &:hover,
     &.active {
@@ -26,6 +43,10 @@ nav {
       border-top-right-radius: 8px;
       border-color: $green;
       color: $green;
+
+      span {
+        color: $grey-900;
+      }
     }
 
     img {
@@ -35,6 +56,12 @@ nav {
 
     span {
       display: none;
+      @include text-preset(5-bold);
+
+      @media (min-width: $breakpoint-tablet) {
+        display: inline;
+        text-align: center;
+      }
     }
   }
 }
