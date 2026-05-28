@@ -5,63 +5,170 @@ nav {
   position: fixed;
   bottom: 0;
 
+  width: 100%;
+
   background-color: $grey-900;
   border-radius: 8px 8px 0px 0px;
 
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-
   padding-inline: 16px;
   padding-top: 8px;
+  @include text-preset(5-bold);
 
   @media (min-width: $breakpoint-tablet) {
     padding-inline: 40px;
     gap: 40px;
   }
 
-  a {
-    padding: 8px 22px;
-    border-bottom: 4px solid transparent;
-    color: $grey-300;
+  @media (min-width: $breakpoint-desktop) {
+    left: 0;
+    @include text-preset(3);
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 4px;
+    gap: 24px;
+    border-radius: 0px 16px 16px 0px;
+    padding-inline: 0;
+    padding-bottom: 24px;
 
-    @media (min-width: $breakpoint-tablet) {
-      padding-inline: 10px;
-      flex-basis: 0;
-      flex-grow: 1;
-    }
+    height: 100%;
+    width: fit-content;
+    min-width: 300px;
+  }
 
-    &:hover,
-    &.active {
-      background-color: $white;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      border-color: $green;
-      color: $green;
+  &.minimized {
+    @media (min-width: $breakpoint-desktop) {
+      min-width: 88px;
 
-      span {
-        color: $grey-900;
+      .nav-items {
+        a {
+          margin-right: 8px;
+          min-height: 56px;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+      .minimize-menu {
+        min-height: 56px;
+
+        img {
+          rotate: 180deg;
+        }
+
+        span {
+          display: none;
+        }
       }
     }
+  }
 
-    img {
-      height: 24px;
-      aspect-ratio: 1;
+  .logo-wrapper {
+    display: none;
+    padding: 40px 32px;
+
+    @media (min-width: $breakpoint-desktop) {
+      display: block;
+    }
+  }
+
+  .nav-items {
+    display: flex;
+
+    justify-content: space-between;
+
+    @media (min-width: $breakpoint-desktop) {
+      flex-direction: column;
+      gap: 4px;
+      flex-grow: 1;
+      justify-content: flex-start;
     }
 
-    span {
-      display: none;
-      @include text-preset(5-bold);
+    a {
+      padding: 8px 22px;
+      border-bottom: 4px solid transparent;
+      color: $grey-300;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
 
       @media (min-width: $breakpoint-tablet) {
-        display: inline;
-        text-align: center;
+        padding-inline: 10px;
+        flex-basis: 0;
+        flex-grow: 1;
       }
+
+      @media (min-width: $breakpoint-desktop) {
+        flex-direction: row;
+        gap: 16px;
+        padding: 16px 0 16px 32px;
+        margin-right: 32px;
+        border-left: 4px solid transparent;
+        border-bottom: none;
+
+        flex-grow: 0;
+      }
+
+      &:hover,
+      &.active {
+        background-color: $white;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-color: $green;
+
+        @media (min-width: $breakpoint-desktop) {
+          border-top-left-radius: 0px;
+          border-bottom-right-radius: 12px;
+          border-top-right-radius: 12px;
+        }
+
+        span {
+          color: $grey-900;
+        }
+      }
+
+      &.active {
+        color: $green;
+      }
+      &:hover {
+        color: $grey-900;
+      }
+
+      img {
+        height: 24px;
+        aspect-ratio: 1;
+      }
+
+      span {
+        display: none;
+
+        @media (min-width: $breakpoint-tablet) {
+          display: inline;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .minimize-menu {
+    display: none;
+    align-items: center;
+    gap: 16px;
+
+    color: $grey-300;
+    padding: 16px 32px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $grey-100;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      display: flex;
     }
   }
 }

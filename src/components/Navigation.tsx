@@ -4,7 +4,13 @@ import BudgetsIcon from './nav-icons/BudgetsIcon';
 import PotsIcon from './nav-icons/PotsIcon';
 import RecurringBillsIcon from './nav-icons/RecurringBillsIcon';
 
+import LogoSmall from '../assets/images/logo-small.svg';
+import LogoLarge from '../assets/images/logo-large.svg';
+import MinimizeMenuIcon from './nav-icons/MinimizeMenuIcon';
+
 import NavigationItem from './NavigationItem';
+
+import { useState } from 'react';
 
 const Navigation = () => {
   const navItems = [
@@ -36,17 +42,38 @@ const Navigation = () => {
     },
   ];
 
+  const [isMinimized, setIsMinimized] = useState<boolean>(false);
+
+  const handleToggleMenu = () => {
+    setIsMinimized(!isMinimized);
+  };
+
   return (
-    <nav>
-      {navItems.map((item) => (
-        <NavigationItem
-          key={item.label}
-          icon={item.icon}
-          label={item.label}
-          url={item.url}
-          active={item.active}
-        />
-      ))}
+    <nav className={`${isMinimized ? 'minimized' : ''}`}>
+      <div className='logo-wrapper'>
+        {isMinimized ? (
+          <img src={LogoSmall} alt='Logo' />
+        ) : (
+          <img src={LogoLarge} alt='Logo' />
+        )}
+      </div>
+
+      <div className='nav-items'>
+        {navItems.map((item) => (
+          <NavigationItem
+            key={item.label}
+            icon={item.icon}
+            label={item.label}
+            url={item.url}
+            active={item.active}
+          />
+        ))}
+      </div>
+
+      <div className='minimize-menu' onClick={handleToggleMenu}>
+        <MinimizeMenuIcon />
+        <span>Minimize Menu</span>
+      </div>
     </nav>
   );
 };
