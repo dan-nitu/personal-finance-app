@@ -1,0 +1,54 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+div[class^='button-'] {
+  cursor: pointer;
+  width: fit-content;
+
+  padding: 16px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+
+  @include text-preset(4-bold);
+}
+
+.button-primary {
+  background-color: $grey-900;
+  border-color: $grey-900;
+  color: $white;
+
+  &:hover {
+    background-color: $grey-500;
+    border-color: $grey-500;
+  }
+}
+
+.button-secondary {
+  color: $grey-900;
+  border-color: transparent;
+
+  &:hover {
+    border-color: $beige-500;
+  }
+}
+
+.button-tertiary {
+  color: $grey-500;
+  border-color: transparent;
+
+  &:hover {
+    color: $grey-900;
+  }
+}
+
+.button-destroy {
+  background-color: $red;
+  border-color: $red;
+  color: $white;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

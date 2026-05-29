@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 interface NavigationItemProps {
-  icon: string | ReactNode;
+  icon: ReactNode;
   label: string;
   url: string;
   active?: boolean;
