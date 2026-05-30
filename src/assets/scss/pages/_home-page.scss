@@ -4,12 +4,19 @@
 .home-page {
   .overview-cards {
     display: grid;
-    gap: 12px;
+    gap: 12px 24px;
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     .card {
       display: grid;
       gap: 12px;
       padding: 20px;
+      @media (min-width: $breakpoint-tablet) {
+        padding: 24px;
+      }
 
       dt.card-label {
         @include text-preset(4);
