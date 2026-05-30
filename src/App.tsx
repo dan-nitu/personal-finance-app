@@ -1,18 +1,27 @@
+import { Routes, Route } from 'react-router-dom';
+
 import Navigation from './components/Navigation';
 
-import Button from './components/Button';
+import Home from './pages/Home';
+import Transactions from './pages/Transactions';
+import Budgets from './pages/Budgets';
+import Pots from './pages/Pots';
+import RecurringBills from './pages/RecurringBills';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <>
       <Navigation />
-      <main>
-        Personal finance app
-        <Button variant='primary'>Primary</Button>
-        <Button variant='secondary'>Secondary</Button>
-        <Button variant='tertiary'>Tertiary</Button>
-        <Button variant='destroy'>Destroy</Button>
-      </main>
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/transactions' element={<Transactions />} />
+        <Route path='/budgets' element={<Budgets />} />
+        <Route path='/pots' element={<Pots />} />
+        <Route path='/recurring-bills' element={<RecurringBills />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </>
   );
 }
