@@ -1,12 +1,12 @@
-import OverviewIcon from './nav-icons/OverviewIcon';
-import TransactionsIcon from './nav-icons/TransactionsIcon';
-import BudgetsIcon from './nav-icons/BudgetsIcon';
-import PotsIcon from './nav-icons/PotsIcon';
-import RecurringBillsIcon from './nav-icons/RecurringBillsIcon';
+import OverviewIcon from './icons/nav-icons/OverviewIcon';
+import TransactionsIcon from './icons/nav-icons/TransactionsIcon';
+import BudgetsIcon from './icons/nav-icons/BudgetsIcon';
+import PotsIcon from './icons/nav-icons/PotsIcon';
+import RecurringBillsIcon from './icons/nav-icons/RecurringBillsIcon';
 
 import LogoSmall from '../assets/images/logo-small.svg';
 import LogoLarge from '../assets/images/logo-large.svg';
-import MinimizeMenuIcon from './nav-icons/MinimizeMenuIcon';
+import MinimizeMenuIcon from './icons/nav-icons/MinimizeMenuIcon';
 
 import NavigationItem from './NavigationItem';
 

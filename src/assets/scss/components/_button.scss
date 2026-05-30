@@ -5,13 +5,15 @@ div[class^='button-'] {
   cursor: pointer;
   width: fit-content;
 
-  padding: 16px;
+  &:not(.button-tertiary) {
+    padding: 16px;
 
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
 
-  @include text-preset(4-bold);
+    @include text-preset(4-bold);
+  }
 }
 
 .button-primary {
@@ -37,9 +39,18 @@ div[class^='button-'] {
 .button-tertiary {
   color: $grey-500;
   border-color: transparent;
+  @include text-preset(4);
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
   &:hover {
     color: $grey-900;
+  }
+
+  img {
+    height: 8px;
   }
 }
 

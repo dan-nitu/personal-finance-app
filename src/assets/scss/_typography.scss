@@ -91,3 +91,6 @@ $text-presets: (
 h1 {
   @include text-preset(1);
 }
+h2 {
+  @include text-preset(2);
+}
