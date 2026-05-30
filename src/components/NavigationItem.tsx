@@ -11,7 +11,7 @@ interface NavigationItemProps {
 const NavigationItem = ({ icon, label, url, active }: NavigationItemProps) => {
   return (
     <Link className={`navigation-item ${active ? 'active' : ''}`} to={url}>
-      {typeof icon === 'string' ? <img src={icon} alt={label} /> : icon}
+      {icon}
       <span>{label}</span>
     </Link>
   );
