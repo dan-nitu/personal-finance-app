@@ -1,3 +1,11 @@
+import OverviewCards from '../components/home/OverviewCards';
+
 export default function Home() {
-  return <h1>Home Page</h1>;
+  return (
+    <main className='home-page'>
+      <h1>Overview</h1>
+
+      <OverviewCards />
+    </main>
+  );
 }

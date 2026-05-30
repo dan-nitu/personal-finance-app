@@ -5,4 +5,8 @@
 @use 'layout' as *;
 
 @use 'components/navigation' as *;
+
+@use 'components/card' as *;
 @use 'components/button' as *;
+
+@use 'pages/home-page' as *;

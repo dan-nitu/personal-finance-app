@@ -87,3 +87,7 @@ $text-presets: (
     }
   }
 }
+
+h1 {
+  @include text-preset(1);
+}

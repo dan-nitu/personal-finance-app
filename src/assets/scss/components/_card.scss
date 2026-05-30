@@ -1,0 +1,12 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.card {
+  background-color: $white;
+  border-radius: 12px;
+
+  &.dark {
+    background-color: $grey-900;
+    color: $white;
+  }
+}

@@ -1,0 +1,23 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.home-page {
+  .overview-cards {
+    display: grid;
+    gap: 12px;
+
+    .card {
+      display: grid;
+      gap: 12px;
+      padding: 20px;
+
+      dt.card-label {
+        @include text-preset(4);
+      }
+
+      dd {
+        @include text-preset(1);
+      }
+    }
+  }
+}
