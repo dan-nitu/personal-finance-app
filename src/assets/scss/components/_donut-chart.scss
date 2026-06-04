@@ -1,0 +1,36 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.donut-chart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin-inline: 31.5px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border-radius: 50%;
+    background-color: $white;
+    opacity: 0.25;
+  }
+
+  .donut-chart-center {
+    position: absolute;
+
+    display: grid;
+    gap: 8px;
+    text-align: center;
+
+    .donut-chart-amount {
+      @include text-preset(1);
+    }
+    .donut-chart-limit {
+      @include text-preset(5);
+    }
+  }
+}

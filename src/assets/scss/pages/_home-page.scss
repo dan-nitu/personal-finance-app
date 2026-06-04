@@ -114,7 +114,7 @@
           padding: 32px;
         }
 
-        .title {
+        .transactions-title {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -164,6 +164,49 @@
                 @include text-preset(5);
                 color: $grey-500;
               }
+            }
+          }
+        }
+      }
+
+      .budgets {
+        display: grid;
+        gap: 20px;
+        padding: 24px 20px;
+
+        @media (min-width: $breakpoint-tablet) {
+          padding: 32px;
+        }
+
+        .budgets-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .budgets-content {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          padding-block: 8px;
+
+          @media (min-width: $breakpoint-tablet) {
+            flex-direction: row;
+          }
+
+          .donut-chart-wrapper {
+            justify-content: center;
+            display: flex;
+            flex-grow: 1;
+          }
+
+          .budgets-amounts {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+
+            @media (min-width: $breakpoint-tablet) {
+              grid-template-columns: repeat(1, 1fr);
             }
           }
         }

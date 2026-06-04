@@ -7,7 +7,7 @@ import dummyIcon from '../../assets/images/avatars/aqua-flow-utilities.jpg';
 const Transactions = () => {
   return (
     <Card className='transactions'>
-      <div className='title'>
+      <div className='transactions-title'>
         <h2>Transactions</h2>
         <Button variant='tertiary'>View All</Button>
       </div>
