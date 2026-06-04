@@ -1,7 +1,9 @@
 import OverviewCards from '../components/home/OverviewCards';
 
 import Card from '../components/Card';
-import Button from '../components/Button';
+
+import Pots from './../components/home/Pots';
+import Transactions from '../components/home/Transactions';
 
 export default function Home() {
   return (
@@ -10,12 +12,19 @@ export default function Home() {
 
       <OverviewCards />
 
-      <Card className='pots'>
-        <div className='title'>
-          <h2>Pots</h2>
-          <Button variant='tertiary'>See Details</Button>
+      <div className='content-wrapper'>
+        <div className='section-wrapper'>
+          <Pots />
+
+          <Transactions />
         </div>
-      </Card>
+
+        <div>
+          <Card className='budgets'>
+            <h2>Budgets</h2>
+          </Card>
+        </div>
+      </div>
     </main>
   );
 }

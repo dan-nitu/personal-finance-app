@@ -28,13 +28,146 @@
     }
   }
 
-  .pots {
-    padding: 24px 20px;
+  .content-wrapper {
+    display: grid;
+    gap: 24px;
 
-    .title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .section-wrapper {
+      display: grid;
+      gap: 16px;
+
+      @media (min-width: $breakpoint-tablet) {
+        gap: 24px;
+      }
+
+      .pots {
+        padding: 24px 20px;
+        display: grid;
+        gap: 16px;
+
+        @media (min-width: $breakpoint-tablet) {
+          padding: 32px;
+          gap: 20px;
+        }
+
+        .pot-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .pot-content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          @media (min-width: $breakpoint-tablet) {
+            gap: 20px;
+            flex-direction: row;
+          }
+        }
+
+        .pot-overview {
+          background-color: $beige-100;
+          padding: 16px;
+
+          display: flex;
+          gap: 16px;
+          align-items: center;
+
+          min-width: 250px;
+
+          img {
+            padding: 2px 6px;
+          }
+
+          > div {
+            display: grid;
+            gap: 11px;
+
+            span {
+              @include text-preset(4);
+              color: $grey-500;
+
+              &.amount {
+                @include text-preset(1);
+                color: $grey-900;
+              }
+            }
+          }
+        }
+
+        .pot-amounts {
+          display: grid;
+          gap: 16px 0;
+          grid-template-columns: repeat(2, 1fr);
+          flex-grow: 1;
+        }
+      }
+
+      .transactions {
+        padding: 24px 20px;
+        display: grid;
+        gap: 32px;
+
+        @media (min-width: $breakpoint-tablet) {
+          padding: 32px;
+        }
+
+        .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .transaction-list {
+          display: grid;
+
+          .transaction-item {
+            display: flex;
+            justify-content: space-between;
+
+            &:not(:first-child) {
+              padding-top: 20px;
+            }
+
+            &:not(:last-child) {
+              padding-bottom: 20px;
+              border-bottom: 1px solid $grey-100;
+            }
+
+            .transaction-title {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+
+              img {
+                height: 32px;
+                border-radius: 50%;
+              }
+
+              span {
+                @include text-preset(4-bold);
+              }
+            }
+
+            .transaction-data {
+              display: grid;
+              gap: 8px;
+              text-align: right;
+
+              .transaction-value {
+                @include text-preset(4-bold);
+                color: $grey-900;
+              }
+              .transaction-date {
+                @include text-preset(5);
+                color: $grey-500;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
