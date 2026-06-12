@@ -1,0 +1,44 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+$bill-card-colors: (
+  green: $green,
+  yellow: $yellow,
+  cyan: $cyan,
+  navy: $navy,
+  red: $red,
+  purple: $purple,
+  purple-light: $purple-light,
+  turquoise: $turquoise,
+  brown: $brown,
+  magenta: $magenta,
+  blue: $blue,
+  navy-grey: $navy-grey,
+  army-green: $army-green,
+  gold: $gold,
+  orange: $orange,
+);
+
+.bill-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  border-radius: 8px;
+  background-color: $beige-100;
+
+  @each $name, $color in $bill-card-colors {
+    &.#{$name} {
+      border-left: 4px solid $color;
+    }
+  }
+
+  dt {
+    @include text-preset(4);
+    color: $grey-500;
+  }
+  dd {
+    @include text-preset(4-bold);
+    color: $grey-900;
+  }
+}

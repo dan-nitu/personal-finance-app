@@ -211,6 +211,28 @@
           }
         }
       }
+
+      .recurring-bills {
+        display: grid;
+        gap: 20px;
+        padding: 24px 20px;
+
+        @media (min-width: $breakpoint-tablet) {
+          padding: 32px;
+          gap: 32px;
+        }
+
+        .recurring-bills-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .recurring-bills-content {
+          display: grid;
+          gap: 12px;
+        }
+      }
     }
   }
 }
