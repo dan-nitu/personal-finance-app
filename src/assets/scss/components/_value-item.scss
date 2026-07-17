@@ -24,7 +24,7 @@ $value-colors: (
   padding-inline: 20px;
 
   @each $name, $color in $value-colors {
-    &.#{$name} {
+    &.#{'color-' + $name} {
       &::before {
         content: '';
         position: absolute;

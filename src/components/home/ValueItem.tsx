@@ -6,7 +6,7 @@ interface ValueItemProps {
 
 const ValueItem = ({ label, title, amount }: ValueItemProps) => {
   return (
-    <dl className={`value-item ${label}`}>
+    <dl className={`value-item color-${label}`}>
       <dt>{title}</dt>
       <dd>${amount}</dd>
     </dl>

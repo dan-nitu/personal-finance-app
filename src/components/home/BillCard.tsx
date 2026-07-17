@@ -6,7 +6,7 @@ interface BillCardProps {
 
 const BillCard = ({ label, title, amount }: BillCardProps) => {
   return (
-    <dl className={`bill-card ${label}`}>
+    <dl className={`bill-card color-${label}`}>
       <dt>{title}</dt>
       <dd>${amount}</dd>
     </dl>

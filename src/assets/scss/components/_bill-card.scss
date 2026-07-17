@@ -28,7 +28,7 @@ $bill-card-colors: (
   background-color: $beige-100;
 
   @each $name, $color in $bill-card-colors {
-    &.#{$name} {
+    &.#{'color-' + $name} {
       border-left: 4px solid $color;
     }
   }
