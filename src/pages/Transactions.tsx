@@ -4,6 +4,10 @@ import categoryIcon from '../assets/images/icon-filter-mobile.svg';
 import SearchInput from '../components/SearchInput';
 import IconSelect from '../components/IconSelect';
 
+import TransactionListItem from '../components/transactions/TransactionListItem';
+
+import dummyIcon from '../assets/images/avatars/aqua-flow-utilities.jpg';
+
 export default function Transactions() {
   const sortByOptions = [
     'Latest',
@@ -44,7 +48,30 @@ export default function Transactions() {
           </div>
         </div>
 
-        <div className='transaction-list'></div>
+        <div className='transaction-list'>
+          <TransactionListItem
+            icon={dummyIcon}
+            title={'Transaction Title'}
+            category={'Category'}
+            amount={100.0}
+            date={'2023-01-01'}
+          />
+          <TransactionListItem
+            icon={dummyIcon}
+            title={'Transaction Title'}
+            category={'Category'}
+            amount={100.0}
+            date={'2023-01-01'}
+          />
+          <TransactionListItem
+            icon={dummyIcon}
+            title={'Transaction Title'}
+            category={'Category'}
+            amount={100.0}
+            type={'Income'}
+            date={'2023-01-01'}
+          />
+        </div>
         <div className='pagination'></div>
       </div>
     </main>

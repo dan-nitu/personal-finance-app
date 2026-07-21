@@ -1,0 +1,91 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.transaction-list-item {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    display: grid;
+    gap: 1px 12px;
+
+    @media (min-width: $breakpoint-tablet) {
+      display: flex;
+    }
+
+    &:first-child {
+      display: flex;
+      align-items: center;
+
+      @media (min-width: $breakpoint-tablet) {
+        flex-basis: 70%;
+        flex-shrink: 0;
+        gap: 16px;
+      }
+    }
+
+    &:last-child {
+      @media (min-width: $breakpoint-tablet) {
+        flex-basis: 30%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .transaction-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+
+      @media (min-width: $breakpoint-tablet) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .transaction-details {
+      display: grid;
+      gap: 1px;
+
+      @media (min-width: $breakpoint-tablet) {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      h3 {
+        @include text-preset(4-bold);
+        color: $grey-900;
+        flex-basis: 70%;
+      }
+
+      p {
+        @include text-preset(4);
+        color: $grey-500;
+        flex-basis: 30%;
+      }
+    }
+
+    .transaction-amount {
+      @include text-preset(4-bold);
+      color: $grey-900;
+      text-align: right;
+
+      &.income {
+        color: $green;
+      }
+    }
+
+    .transaction-date {
+      @include text-preset(5);
+      color: $grey-500;
+    }
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $grey-100;
+  }
+}

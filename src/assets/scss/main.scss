@@ -14,5 +14,7 @@
 @use 'components/value-item' as *;
 @use 'components/bill-card' as *;
 
+@use 'components/transaction-list-item' as *;
+
 @use 'pages/home-page' as *;
 @use 'pages/transactions-page' as *;
