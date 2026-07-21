@@ -1,0 +1,50 @@
+@use '../variables' as *;
+@use '../typography' as *;
+
+.search-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  flex-shrink: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../../images/icon-search.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+  }
+
+  input {
+    color: $grey-900;
+    border: 1px solid $beige-500;
+    border-radius: 8px;
+    padding: 12px 52px 12px 20px;
+    background-color: transparent;
+    flex-shrink: 1;
+    min-width: 0;
+    min-width: 0;
+    width: min(100%, 320px);
+
+    &::placeholder {
+      color: $beige-500;
+    }
+    &:placeholder-shown {
+      text-overflow: ellipsis;
+    }
+
+    &:hover {
+      border-color: $grey-500;
+    }
+
+    &:focus {
+      border-color: $grey-900;
+      outline: none;
+    }
+  }
+}

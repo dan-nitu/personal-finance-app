@@ -8,8 +8,11 @@
 
 @use 'components/card' as *;
 @use 'components/button' as *;
+@use 'components/search-input' as *;
+@use 'components/icon-select' as *;
 @use 'components/donut-chart' as *;
 @use 'components/value-item' as *;
 @use 'components/bill-card' as *;
 
 @use 'pages/home-page' as *;
+@use 'pages/transactions-page' as *;

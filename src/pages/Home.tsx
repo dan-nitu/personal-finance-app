@@ -2,6 +2,7 @@ import OverviewCards from '../components/home/OverviewCards';
 
 import Pots from './../components/home/Pots';
 import Transactions from '../components/home/Transactions';
+
 import Budgets from '../components/home/Budgets';
 import RecurringBills from '../components/home/RecurringBills';
 
